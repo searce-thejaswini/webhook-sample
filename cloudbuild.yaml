@@ -1,0 +1,5 @@
+steps:
+- name: gcr.io/terraformer-376507/firebase
+  args: ['deploy', '--project=terraformer-376507', '--only=hosting']
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET

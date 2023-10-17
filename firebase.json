@@ -1,0 +1,11 @@
+{
+    "hosting": {
+    // "target": "your-firebase-target", // you can define this target in Firebase hosting settings
+    "public": "public", // the directory with your static files
+    "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+    ]
+    }
+   }
