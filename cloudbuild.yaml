@@ -16,6 +16,6 @@ steps:
              # firebase use --token $FIREBASE_TOKEN your-project-name
              firebase deploy --only hosting terraformer-376507 
            else
-             echo "No Firebase deployment needed for this commit."
+             echo "Firebase deployment needed for this commit."
            fi
    
