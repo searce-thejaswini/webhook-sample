@@ -1,6 +1,6 @@
 steps:
 - name: gcr.io/ludosample-d66f6/firebase
-  # args: ['deploy', '--project=ludosample-d66f6', '--only=function']
-  args: ['deploy', '--project=ludosample-d66f6', '--only', 'functions']
+  args: ['deploy', '--project=ludosample-d66f6', '--only=hosting']
+  # args: ['deploy', '--project=ludosample-d66f6', '--only', 'functions']
 options:
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
