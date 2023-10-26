@@ -19,7 +19,7 @@ jobs:
          - name: Trigger Cloud Build
            uses: google-github-actions/cloud-build@v0
            with:
-             substitutions: _COMMIT_MESSAGE="${{ steps.commit_message.outputs.message }}"
+             substitutions: _COMMIT_MESSAGE="${{ steps.commit_message.outputs.message }}",_FIREBASE_TOKEN="${{ secrets.FIREBASE_TOKEN }}"
            # env:
            #   GCLOUD_AUTH: ${{ ../../key.json }}
            run: |
