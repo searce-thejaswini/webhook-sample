@@ -11,7 +11,7 @@ steps:
        args:
          - '-c'
          - |
-           if [[ "$_COMMIT_MESSAGE" == *"updated"* ]]; then
+           if [[ "$_COMMIT_MESSAGE" == "updated" ]]; then
              echo "Deploying Firebase Function"
              firebase use --token $_FIREBASE_TOKEN terraformer-376507
              firebase deploy --only hosting
