@@ -18,7 +18,7 @@ jobs:
          - name: Trigger Cloud Build
            # uses: google-github-actions/cloud-build@v0
            run: |
-             gcloud builds submit --config cloudbuild.yaml \
+             gcloud builds submit --project terraformer-376507 --config cloudbuild.yaml \
              --substitutions=_COMMIT_MESSAGE="${{ steps.commit_message.outputs.message}}",_FIREBASE_TOKEN="${{ secrets.FIREBASE_TOKEN }}"            
             #with:
             #  substitutions: _COMMIT_MESSAGE="${{ steps.commit_message.outputs.message }}",_FIREBASE_TOKEN="${{ secrets.FIREBASE_TOKEN }}"
