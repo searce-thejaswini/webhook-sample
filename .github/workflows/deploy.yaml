@@ -17,7 +17,7 @@ jobs:
            run: echo "::set-output name=message::$(git log --format=%B -n 1 ${{ github.sha }})"
 
          - name: Trigger Cloud Build
-           uses: google-github-actions/cloud-build@v0
+           # uses: google-github-actions/cloud-build@v0
            with:
              substitutions: _COMMIT_MESSAGE="${{ steps.commit_message.outputs.message }}",_FIREBASE_TOKEN="${{ secrets.FIREBASE_TOKEN }}"
            # env:
