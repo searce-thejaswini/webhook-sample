@@ -23,5 +23,5 @@ jobs:
            # env:
            #   GCLOUD_AUTH: ${{ ../../key.json }}
            run: |
-            export GOOGLE_APPLICATION_CREDENTIALS=gcloud.json 
+            export GOOGLE_APPLICATION_CREDENTIALS=key.json 
            
