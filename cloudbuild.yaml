@@ -13,6 +13,9 @@ steps:
          - |
            if [[ "$_COMMIT_MESSAGE" == *"updated"* ]]; then
              echo "Deploying Firebase Function"
+             firebase use --token $FIREBASE_TOKEN terraformer
+             firebase deploy --only functions
+             1//0gXV4jGh0lMKoCgYIARAAGBASNwF-L9IrCYORfO_Pu0BnSLRvjVdSlxcYYvr3zRfi_fdRoWu8Mm-CRBZpQxREf8sxRhIzaXCvlPw
              firebase deploy --only hosting terraformer-376507 
            else
              echo "Firebase deployment needed for this commit."
