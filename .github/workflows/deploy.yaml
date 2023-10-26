@@ -19,9 +19,9 @@ jobs:
            # uses: google-github-actions/cloud-build@v0
            run: |
            # Trigger the Cloud Build using gcloud CLI or API
-              # gcloud builds submit --config cloudbuild.yaml
-            with:
-              substitutions: _COMMIT_MESSAGE="${{ steps.commit_message.outputs.message }}",_FIREBASE_TOKEN="${{ secrets.FIREBASE_TOKEN }}"
+             gcloud builds submit --config cloudbuild.yaml \
+              --substitutions=_COMMIT_MESSAGE="${{ steps.commit_message.outputs.message}}",_FIREBASE_TOKEN="${{ secrets.FIREBASE_TOKEN }}"            #with:
+            #  substitutions: _COMMIT_MESSAGE="${{ steps.commit_message.outputs.message }}",_FIREBASE_TOKEN="${{ secrets.FIREBASE_TOKEN }}"
            env:
               GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
          # - name: Deploy Firebase Hosting
