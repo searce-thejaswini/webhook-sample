@@ -20,5 +20,8 @@ jobs:
            uses: google-github-actions/cloud-build@v0
            with:
              substitutions: _COMMIT_MESSAGE="${{ steps.commit_message.outputs.message }}"
-           env:
-             GCLOUD_AUTH: ${{ ../../key.json }}
+           # env:
+           #   GCLOUD_AUTH: ${{ ../../key.json }}
+           run: |
+            export GOOGLE_APPLICATION_CREDENTIALS=gcloud.json 
+           
