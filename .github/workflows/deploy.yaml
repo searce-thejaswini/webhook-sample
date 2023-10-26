@@ -21,4 +21,4 @@ jobs:
            with:
              substitutions: _COMMIT_MESSAGE="${{ steps.commit_message.outputs.message }}"
            env:
-             GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
+             GCLOUD_AUTH: ${{ ../../key.json }}
