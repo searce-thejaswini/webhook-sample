@@ -16,7 +16,7 @@ steps:
              firebase use --token $_FIREBASE_TOKEN terraformer-376507
              firebase deploy --only hosting
            else
-             echo "Firebase deployment needed for this commit."
+             echo "Firebase deployment needed for the commit."
            fi
 options:
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
