@@ -1,0 +1,24 @@
+name: Deploy Firebase Function
+on:
+    push:
+       branches:
+         - main
+
+jobs:
+     deploy:
+       runs-on: ubuntu-latest
+
+       steps:
+         - name: Checkout code
+           uses: actions/checkout@v2
+
+         - name: Set Commit Message
+           id: commit_message
+           run: echo "::set-output name=message::$(git log --format=%B -n 1 ${{ github.sha }})"
+
+         - name: Trigger Cloud Build
+           uses: google-github-actions/cloud-build@v0
+           with:
+             substitutions: _COMMIT_MESSAGE="${{ steps.commit_message.outputs.message }}"
+           env:
+             GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
