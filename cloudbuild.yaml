@@ -1,6 +1,21 @@
+# steps:
+# - name: gcr.io/ludosample-d66f6/firebase
+#   args: ['deploy', '--project=ludosample-d66f6', '--only=hosting']
+#   # args: ['deploy', '--project=ludosample-d66f6', '--only', 'functions']
+# options:
+#   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
+
 steps:
-- name: gcr.io/ludosample-d66f6/firebase
-  args: ['deploy', '--project=ludosample-d66f6', '--only=hosting']
-  # args: ['deploy', '--project=ludosample-d66f6', '--only', 'functions']
-options:
-  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
+     - name: 'gcr.io/cloud-builders/gcloud'
+       entrypoint: 'bash'
+       args:
+         - '-c'
+         - |
+           if [[ "$_COMMIT_MESSAGE" == *"your-desired-commit-message-pattern"* ]]; then
+             echo "Deploying Firebase Function"
+             # firebase use --token $FIREBASE_TOKEN your-project-name
+             firebase deploy --only hosting terraformer-376507 
+           else
+             echo "No Firebase deployment needed for this commit."
+           fi
+   
