@@ -6,7 +6,8 @@
 #   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
 
 steps:
-     - name: 'gcr.io/cloud-builders/gcloud'
+    # - name: 'gcr.io/cloud-builders/gcloud'
+     - name: 'gcr.io/terraformer-376507/firebase'
        entrypoint: 'bash'
        args:
          - '-c'
