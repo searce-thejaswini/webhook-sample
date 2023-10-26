@@ -11,6 +11,11 @@ jobs:
          - name: Checkout code
            uses: actions/checkout@v2
 
+         - name: Authenticate with Google Cloud
+           env:
+              GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCLOUD_AUTH }}
+           run: gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS
+
          - name: Set Commit Message
            id: commit_message
            run: echo "::set-output name=message::$(git log --format=%B -n 1 ${{ github.sha }})"
